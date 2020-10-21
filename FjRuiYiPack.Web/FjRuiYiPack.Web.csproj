@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\animate\" />
+    <Folder Include="wwwroot\custom\img\" />
+    <Folder Include="wwwroot\jquery\" />
+    <Folder Include="wwwroot\popper\" />
+    <Folder Include="wwwroot\wow\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Csp.Logger" Version="1.0.0" />
+    <PackageReference Include="Csp.Web" Version="1.0.1" />
+  </ItemGroup>
+
+</Project>
