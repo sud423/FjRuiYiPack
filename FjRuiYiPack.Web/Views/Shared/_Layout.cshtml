@@ -9,9 +9,9 @@
     <meta name="keywords" content="铝制茶叶罐,茶叶金属罐,茶叶铝罐" />
     <meta name="description" content="安溪锐意包装用品有限公司专业的茶叶铝罐、茶叶金属罐、保健食品金属包装、小罐茶茶罐等铝制包装生产企业，产品有茶叶铝罐、烟酒铝制包装盒、铝制茶叶罐、保健品铝罐、阳极氧化包装工艺、铝氧化加工、保健食品包装等铝制包装。茶叶铝罐生产厂家、茶叶金属罐包装厂、小茶罐包装、铝制茶叶罐生产设计，认准安溪锐意包装用品有限公司！" />
 
-    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/animate/animate.min.css" rel="stylesheet" />
-    <link href="~/custom/css/Style.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/animate/animate.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="~/custom/css/style.css" rel="stylesheet" type="text/css" asp-append-version="true" />
 </head>
 <body>
     <!--
@@ -19,9 +19,9 @@
             时间：2020-10-21
             描述：导航栏
         -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="~/custom/img/logo.png" height="30" />
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" asp-action="index" style="padding:0px;">
+            <img src="~/custom/img/logo-1.png" style="height:66px;" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,19 +29,22 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">首页</a>
+                    <a class="nav-link" asp-action="index">首页</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">香水</a>
+                    <a class="nav-link" href="#">公司简介</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">彩妆</a>
+                    <a class="nav-link" href="#">产品中心</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">护肤</a>
+                    <a class="nav-link" href="#">工厂形象</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">推荐</a>
+                    <a class="nav-link" href="#">新闻动态</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">联系我们</a>
                 </li>
             </ul>
         </div>
@@ -55,7 +58,7 @@
             时间：2020-10-21
             描述：页脚
         -->
-    <div class="container zylMarTop wow slideInUp">
+    <div class="container ssdMarTop wow slideInUp">
         <div class="row">
             <div class="col-6 col-md-4">
                 <p>前往 CHANEL.COM</p>
@@ -68,19 +71,19 @@
                 
             </div>
             <div class="col-12 col-md-4">
-                <div class="zylRight">
+                <div class="ssdRight">
                     <img src="~/custom/img/2-1FQQ22940324.png" height="180" />
                 </div>
             </div>
             <div class="col-12 col-md-12">
-                <p class="zylCenter">闽ICP备16033711号</p>
+                <p class="ssdCenter">闽ICP备16033711号</p>
             </div>
         </div>
     </div>
-    <script src="~/jquery/jquery.min.js"></script>
-    <script src="~/popper/popper.min.js"></script>
-    <script src="~/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/wow/wow.min.js"></script>
+    <script src="~/jquery/jquery.min.js" type="text/javascript" ></script>
+    <script src="~/popper/popper.min.js" type="text/javascript" ></script>
+    <script src="~/bootstrap/js/bootstrap.min.js" type="text/javascript" ></script>
+    <script src="~/wow/wow.min.js" type="text/javascript" asp-append-version="true"></script>
 
     <script type="text/javascript">
         if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {

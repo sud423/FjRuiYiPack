@@ -24,9 +24,9 @@ namespace FjRuiYiPack.Web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<RazorViewEngineOptions>(o => {
-                o.ViewLocationExpanders.Add(new ViewLocationExpander());
-            });
+            //services.Configure<RazorViewEngineOptions>(o => {
+            //    o.ViewLocationExpanders.Add(new ViewLocationExpander());
+            //});
 
             services.Configure<AppSettings>(Configuration);
 
