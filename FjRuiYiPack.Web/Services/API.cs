@@ -4,9 +4,11 @@
     {
         public static class Article
         {
-            public static string GetArticles(string baseUrl) => $"{baseUrl}/articles/2/42/2/10";
+            public static string GetArticles(string baseUrl) => $"{baseUrl}/articles/3/0/4";
 
             public static string GetArticle(string baseUrl) => $"{baseUrl}/articles/browse";
+
+            public static string GetCategories(string baseUrl) => $"{baseUrl }/categories/3/4/both";
         }
     }
 }

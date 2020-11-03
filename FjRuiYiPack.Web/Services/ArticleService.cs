@@ -44,5 +44,15 @@ namespace FjRuiYiPack.Web.Services
 
             return responseString.FromJson<IEnumerable<Article>>();
         }
+
+
+        public async Task<IEnumerable<Category>> GetCategoriesAsync()
+        {
+            string uri = API.Article.GetCategories(_remoteServiceBaseUrl);
+
+            var responseString = await _httpClient.GetStringAsync(uri);
+
+            return responseString.FromJson<IEnumerable<Category>>();
+        }
     }
 }

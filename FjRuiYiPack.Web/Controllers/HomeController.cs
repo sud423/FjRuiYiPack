@@ -21,8 +21,11 @@ namespace FjRuiYiPack.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var result = await _articleService.GetArticles();
-            return View(result);
+            IndexModel model = new IndexModel();
+
+            model.Articles = await _articleService.GetArticles();
+            model.Categories = await _articleService.GetCategoriesAsync();
+            return View(model);
         }
 
         [Route("/d/{id:int}")]

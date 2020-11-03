@@ -1,6 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model IndexModel
 @{
 }
 <!--
@@ -32,7 +33,7 @@
         -->
 <section class="ssdIndrContainer ssdPadBot">
     <div class="container ssdimg">
-        <div class="wow slideInUp row">
+        <div class="wow slideInLeft row">
             <div class="col-md-12 ssdPadBot ssdPadTop">
                 <div class="ssdTitle">公司简介</div>
             </div>
@@ -52,60 +53,49 @@
 <!--
             作者：susd
             时间：2020-10-29
-            描述：新品推荐
+            描述：产品中心
         -->
-<div class="container ssdimg ssdMarTop">
+<div class="container ssdimg ssdPadTop">
     <div class="row">
         <div class="col-md-12 ssdPadBot">
             <div class="ssdTitle">产品中心</div>
         </div>
-        <div class="col-6 col-md-4 wow slideInUp">
-            <div class="ssdCenter ssdPadBot ssdImgAnimation">
-                <img src="https://www.chanel.cn/fnbv3/image/512/chanel__com_type1/skus_relative/chance-eau-tendre--35ml.3145891262902.jpg" />
-                <figcaption class="ssdColor_1">￥330.00</figcaption>
-                <div>CHANCE EAU TENDRE</div>
-                <div>香奈儿邂逅柔情淡香水（瓶装）</div>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 wow slideInUp">
-            <div class="ssdCenter ssdPadBot ssdImgAnimation">
-                <img src="https://www.chanel.cn/fnbv3/image/344/chanel__com_type1/skus_relative/rouge-allure-velvet--58-rouge-vie-35g.3145891625806.jpg" />
-                <figcaption class="ssdColor_1">￥330.00</figcaption>
-                <div>ROUGE ALLURE VELVET</div>
-                <div>香奈儿炫亮魅力唇膏丝绒系列</div>
-            </div>
-        </div>
-        <div class="wow slideInUp col-6 col-md-4">
-            <div class="ssdCenter ssdPadBot ssdImgAnimation">
-                <img src="https://www.chanel.cn/fnbv3/image/512/chanel__com_type1/skus_relative/bleu-de-chanel-_-50ml.3145891074505.jpg" />
-                <figcaption class="ssdColor_1">￥330.00</figcaption>
-                <div>BLEU DE CHANEL</div>
-                <div>香奈儿蔚蓝男士淡香水</div>
-            </div>
-        </div>
 
-        <div class="col-6 col-md-4 wow slideInUp">
-            <div class="ssdCenter ssdPadBot ssdImgAnimation">
-                <img src="https://www.chanel.cn/fnbv3/image/512/chanel__com_type1/skus_relative/bleu-de-chanel-_-50ml.3145891074505.jpg" />
-                <figcaption class="ssdColor_1">￥330.00</figcaption>
-                <div>BLEU DE CHANEL</div>
-                <div>香奈儿蔚蓝男士淡香水</div>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 wow slideInUp">
-            <div class="ssdCenter ssdPadBot ssdImgAnimation">
-                <img src="https://www.chanel.cn/fnbv3/image/512/chanel__com_type1/skus_relative/chance-eau-tendre--35ml.3145891262902.jpg" />
-                <figcaption class="ssdColor_1">￥330.00</figcaption>
-                <div>CHANCE EAU TENDRE</div>
-                <div>香奈儿邂逅柔情淡香水（瓶装）</div>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 wow slideInUp">
-            <div class="ssdCenter ssdPadBot ssdImgAnimation">
-                <img src="https://www.chanel.cn/fnbv3/image/344/chanel__com_type1/skus_relative/rouge-allure-velvet--58-rouge-vie-35g.3145891625806.jpg" />
-                <figcaption class="ssdColor_1">￥330.00</figcaption>
-                <div>ROUGE ALLURE VELVET</div>
-                <div>香奈儿炫亮魅力唇膏丝绒系列</div>
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" role="tablist">
+                @foreach (var item in Model.Categories)
+                {
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link @(Model.Categories.ToList().IndexOf(item)==0?"active":"")" id="@(item.Code)-tab" data-toggle="tab" href="#@(item.Code)" role="tab" aria-controls="@item.Code" aria-selected="@(Model.Categories.ToList().IndexOf(item)==0)">@item.Name</a>
+                    </li>
+                }
+            </ul>
+            <div class="tab-content ssdPadBot" style="padding-top:25px;">
+                @foreach (var item in Model.Categories)
+                {
+                    <div class="tab-pane fade @(Model.Categories.ToList().IndexOf(item)==0?"show active":"")" id="@item.Code" role="tabpanel" aria-labelledby="@(item.Code)-tab">
+                        <div class="row">
+
+                            @foreach (var article in Model.Articles.Where(a => a.CategoryId == item.Id))
+                            {
+                            <div class="col-6 col-md-4">
+                                <div class="ssdPadBot ssdImgAnimation">
+                                    @if (string.IsNullOrWhiteSpace(article.Cover))
+                                    {
+                                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="40%" y="50%" fill="#eceeef" dy=".3em">暂无图片</text></svg>
+                                    }
+                                    else
+                                    {
+                                        <img src="@(article.Cover)" alt="@article.Title" />
+                                    }
+                                    <figcaption>@(article.Title)</figcaption>
+                                </div>
+                            </div>
+                            }
+
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -117,7 +107,7 @@
             描述：新品推荐
         -->
 <div class="ssdIndrContainer ssdPadBot">
-    <div class="container wow slideInUp">
+    <div class="container wow slideInRight">
         <div class="row">
             <div class="col-md-12 ssdimg">
                 <div class="row">
@@ -125,10 +115,7 @@
                         <div class="ssdTitle">工厂形象</div>
                     </div>
                     <div class="col-12 col-md-12">
-                        <div class="ssdCenter">
-                            <img src="~/custom/img/1-160419125042U4.png" />
-                            
-                        </div>
+                        <img src="~/custom/img/1-160419125042U4.png" />
                     </div>
                 </div>
             </div>
