@@ -119,7 +119,43 @@
         transition: transform 0.4s, opacity 0.1s;
     }
 
+.lxwm_index li {
+    list-style: none;
+    height: 32px;
+    line-height: 32px;
+    color: #666;
+    padding-left: 35px;
+}
 
+.rx {
+    background: url(/custom/img/sylx.png) no-repeat;
+    background-position: left 8px;
+}
+
+.lxr {
+    background: url(/custom/img/sylx.png) no-repeat;
+    background-position: left -23px;
+}
+
+.dh {
+    background: url(/custom/img/sylx.png) no-repeat;
+    background-position: left -57px;
+}
+
+.cz {
+    background: url(/custom/img/sylx.png) no-repeat;
+    background-position: left -90px;
+}
+
+.yb {
+    background: url(/custom/img/sylx.png) no-repeat;
+    background-position: left -123px;
+}
+
+.dz {
+    background: url(/custom/img/sylx.png) no-repeat;
+    background-position: left -156px;
+}
 
 /*
  *滚动条样式
