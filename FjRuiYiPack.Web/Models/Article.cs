@@ -14,6 +14,8 @@ namespace FjRuiYiPack.Web.Models
 
         public string Content { get; set; }
 
+        public int Clicks { get; set; }
+
         public DateTime CreatedAt { get; set; }
 
     }

@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Article
+
+@{
+}
+
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/custom/img/5.jpg" class="d-block w-100" alt="福建省安溪锐意包装用品有限公司">
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container ssdPadTop text-center wow slideInLeft">
+    <h2>@Model.Title</h2>
+    <p>作者：锐意铝制包装&nbsp;&nbsp;&nbsp;&nbsp;发布时间：@(Model.CreatedAt)&nbsp;&nbsp;&nbsp;&nbsp;@(Model.Clicks)次浏览</p>
+    <hr style="" />
+    @Html.Raw(Model.Content)
+</main>

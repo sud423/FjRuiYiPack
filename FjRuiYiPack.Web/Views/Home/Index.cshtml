@@ -32,6 +32,7 @@
             描述：公司简介
         -->
 <section class="ssdIndrContainer ssdPadBot">
+    <a name="gsjj" class="dark"></a>
     <div class="container ssdimg">
         <div class="wow slideInLeft row">
             <div class="col-md-12 ssdPadBot ssdPadTop">
@@ -56,6 +57,7 @@
             描述：产品中心
         -->
 <div class="container ssdimg ssdPadTop">
+    <a name="cpzx" class="dark"></a>
     <div class="row">
         <div class="col-md-12 ssdPadBot">
             <div class="ssdTitle">产品中心</div>
@@ -78,19 +80,21 @@
 
                             @foreach (var article in Model.Articles.Where(a => a.CategoryId == item.Id))
                             {
-                            <div class="col-6 col-md-4">
-                                <div class="ssdPadBot ssdImgAnimation">
-                                    @if (string.IsNullOrWhiteSpace(article.Cover))
-                                    {
-                                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="40%" y="50%" fill="#eceeef" dy=".3em">暂无图片</text></svg>
-                                    }
-                                    else
-                                    {
-                                        <img src="@(article.Cover)" alt="@article.Title" />
-                                    }
-                                    <figcaption class="text-center">@(article.Title)</figcaption>
+                                <div class="col-12 col-md-3">
+                                    <div class="ssdPadBot ssdImgAnimation">
+                                        <a asp-action="detail" asp-controller="home" asp-route-id="@article.Id" target="_blank">
+                                            @if (string.IsNullOrWhiteSpace(article.Cover))
+                                            {
+                                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="40%" y="50%" fill="#eceeef" dy=".3em">暂无图片</text></svg>
+                                            }
+                                            else
+                                            {
+                                                <img src="@(article.Cover)" alt="@article.Title" />
+                                            }
+                                            <figcaption class="text-center">@(article.Title)</figcaption>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
                             }
 
                         </div>
@@ -104,9 +108,10 @@
 <!--
             作者：susd
             时间：2020-10-30
-            描述：新品推荐
+            描述：工厂形象
         -->
 <div class="ssdIndrContainer ssdPadBot">
+    <a name="gcxx" class="dark"></a>
     <div class="container wow slideInRight">
         <div class="row">
             <div class="col-md-12 ssdimg">
@@ -122,3 +127,10 @@
         </div>
     </div>
 </div>
+
+
+@section body{
+    <script type="text/javascript">
+
+    </script>
+}
