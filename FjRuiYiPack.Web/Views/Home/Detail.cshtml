@@ -20,5 +20,14 @@
     <h2>@Model.Title</h2>
     <p>作者：锐意铝制包装&nbsp;&nbsp;&nbsp;&nbsp;发布时间：@(Model.CreatedAt)&nbsp;&nbsp;&nbsp;&nbsp;@(Model.Clicks)次浏览</p>
     <hr style="" />
-    @Html.Raw(Model.Content)
+    @Html.Raw(Model.Content.Replace("src","data-original"))
 </main>
+
+@section body{ 
+<script type="text/javascript">
+    $(function () {
+        $("main img").addClass("img-fluid");
+    });
+    
+</script>
+}
