@@ -2,7 +2,8 @@
     font-family: "微软雅黑";
     font-size: 14px;
     color: #333333;
-    padding-top:80px;
+    padding-top: 80px;
+    overflow-x:hidden;
 }
 
 
