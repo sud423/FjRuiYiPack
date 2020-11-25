@@ -31,9 +31,9 @@ namespace FjRuiYiPack.Web.Controllers
         [Route("/d/{id:int}")]
         public async Task<IActionResult> Detail(int id)
         {
-            var articel = await _articleService.GetArticle(id, HttpContext.RemoteIp(), Request.BrowserNameByUserAgent(), Request.DeviceByUserAgent(), Request.OsByUserAgent());
-
-            return View(articel);
+            var article = await _articleService.GetArticle(id, HttpContext.RemoteIp(), Request.BrowserNameByUserAgent(), Request.DeviceByUserAgent(), Request.OsByUserAgent());
+            article.Content = article.Content.Replace("src", "data-original");
+            return View(article);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
