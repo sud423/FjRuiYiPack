@@ -7,5 +7,6 @@ namespace FjRuiYiPack.Web.Models
         public IEnumerable<Article> Articles { get; set; }
 
         public IEnumerable<Category> Categories { get; set; }
+
     }
 }

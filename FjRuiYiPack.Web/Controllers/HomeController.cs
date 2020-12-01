@@ -2,6 +2,7 @@
 using FjRuiYiPack.Web.Models;
 using FjRuiYiPack.Web.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -19,14 +20,22 @@ namespace FjRuiYiPack.Web.Controllers
             _articleService = articleService;
         }
 
+        public override void OnActionExecuted(ActionExecutedContext context)
+        {
+            ViewBag.Carousels = _articleService.GetCarousels().Result;
+            base.OnActionExecuted(context);
+        }
+
         public async Task<IActionResult> Index()
         {
-            IndexModel model = new IndexModel();
-
-            model.Articles = await _articleService.GetArticles();
-            model.Categories = await _articleService.GetCategoriesAsync();
+            IndexModel model = new IndexModel
+            {
+                Articles = await _articleService.GetArticles(),
+                Categories = await _articleService.GetCategoriesAsync()
+            };
             return View(model);
         }
+
 
         [Route("/d/{id:int}")]
         public async Task<IActionResult> Detail(int id)

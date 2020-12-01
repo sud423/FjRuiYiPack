@@ -45,6 +45,14 @@ namespace FjRuiYiPack.Web.Services
             return responseString.FromJson<IEnumerable<Article>>();
         }
 
+        public async Task<IEnumerable<Carousel>> GetCarousels()
+        {
+            string uri = API.Article.GetCarousels($"{_settings.Value.OcelotUrl}/ws/api/v1");
+
+            var responseString = await _httpClient.GetStringAsync(uri);
+
+            return responseString.FromJson<IEnumerable<Carousel>>();
+        }
 
         public async Task<IEnumerable<Category>> GetCategoriesAsync()
         {

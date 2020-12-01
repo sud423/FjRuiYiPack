@@ -8,6 +8,8 @@
 
             public static string GetArticle(string baseUrl) => $"{baseUrl}/articles/browse";
 
+            public static string GetCarousels(string baseUrl) => $"{baseUrl }/carousel/3/4";
+
             public static string GetCategories(string baseUrl) => $"{baseUrl }/categories/3/4/both";
         }
     }

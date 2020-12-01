@@ -11,5 +11,8 @@ namespace FjRuiYiPack.Web.Services
         Task<IEnumerable<Article>> GetArticles();
 
         Task<IEnumerable<Category>> GetCategoriesAsync();
+
+
+        Task<IEnumerable<Carousel>> GetCarousels();
     }
 }
